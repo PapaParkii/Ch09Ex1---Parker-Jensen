@@ -9,9 +9,11 @@ namespace NFLTeams.Models
         // use full properties for Conferences and Divisions 
         // so can add 'All' item at beginning
         private List<Conference> conferences;
-        public List<Conference> Conferences {
-            get => conferences; 
-            set {
+        public List<Conference> Conferences
+        {
+            get => conferences;
+            set
+            {
                 conferences = new List<Conference> {
                     new Conference { ConferenceID = "all", Name = "All" }
                 };
@@ -20,9 +22,11 @@ namespace NFLTeams.Models
         }
 
         private List<Division> divisions;
-        public List<Division> Divisions {
-            get => divisions; 
-            set {
+        public List<Division> Divisions
+        {
+            get => divisions;
+            set
+            {
                 divisions = new List<Division> {
                     new Division { DivisionID = "all", Name = "All" }
                 };
@@ -31,9 +35,11 @@ namespace NFLTeams.Models
         }
 
         // methods to help view determine active link
-        public string CheckActiveConf(string c) => 
+        public string CheckActiveConf(string c) =>
             c.ToLower() == ActiveConf.ToLower() ? "active" : "";
-        public string CheckActiveDiv(string d) => 
+        public string CheckActiveDiv(string d) =>
             d.ToLower() == ActiveDiv.ToLower() ? "active" : "";
+
+        public string UserName { get; set; }
     }
 }
